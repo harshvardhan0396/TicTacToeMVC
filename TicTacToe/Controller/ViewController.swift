@@ -24,15 +24,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    var a = 0
+    var player = 1
     
     @IBAction func restartButton(_ sender: UIButton) {
-        var a = 1
-        var b = 0
-        sender.setBackgroundImage(UIImage(named: "TTTO"), for: UIControl.State.normal)
-
     }
-//    @IBAction func buttonPressed(_ sender: UIButton) {
-//        sender.setBackgroundImage(UIImage(named: "TTTO"), for: UIControl.State.normal)
-//}
+    @IBAction func buttonPressed(_ sender: UIButton){
+        if(player == 1 ){
+            sender.setBackgroundImage(UIImage(named: "TTTO"), for: UIControl.State.normal)
+            player = 2
+        }
+        else {
+            sender.setBackgroundImage(UIImage(named: "TTTX"), for: UIControl.State.normal)
+            player = 1
+        }
+    }
 }
