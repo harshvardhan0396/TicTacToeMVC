@@ -35,7 +35,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yez-4q-GwV"/>
+                                            <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGh-QI-Ubh"/>
                                         </connections>
                                     </button>
                                 </subviews>
