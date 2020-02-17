@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="uDQ-0h-40L">
                                 <rect key="frame" x="20" y="756" width="374" height="97"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-B2-9Xe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-B2-9Xe">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -33,7 +33,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGh-QI-Ubh"/>
+                                            <action selector="restartButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8b-9C-vBF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -145,7 +145,6 @@
                         <outlet property="button20" destination="Ewd-9Z-PVR" id="a1z-Z6-0N4"/>
                         <outlet property="button21" destination="tKn-e7-mq7" id="ZM3-9M-VWX"/>
                         <outlet property="button22" destination="JcN-C9-EpQ" id="D0f-Q1-YGf"/>
-                        <outlet property="statusLabel" destination="0Ff-B2-9Xe" id="h8J-DE-oQG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
