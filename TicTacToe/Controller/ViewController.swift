@@ -20,46 +20,79 @@ class ViewController: UIViewController {
     @IBOutlet weak var button21: UIButton!
     @IBOutlet weak var button22: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    var buttonArr =  [[UIButton]]()
+    var flag = 9
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.buttonArr = [[self.button00, self.button01,self.button02],[self.button10, self.button11, self.button12],[self.button20,self.button21,self.button22]]
+        statusLabel.text = ""
     }
+    var gameBrain = TicTacToeBrain()
     var player = 1
     var count = 0
     @IBAction func restartButton(_ sender: UIButton) {
-        button00.setBackgroundImage(nil, for: UIControl.State.normal)
-        button01.setBackgroundImage(nil, for: UIControl.State.normal)
-        button02.setBackgroundImage(nil, for: UIControl.State.normal)
-        button10.setBackgroundImage(nil, for: UIControl.State.normal)
-        button11.setBackgroundImage(nil, for: UIControl.State.normal)
-        button12.setBackgroundImage(nil, for: UIControl.State.normal)
-        button20.setBackgroundImage(nil, for: UIControl.State.normal)
-        button21.setBackgroundImage(nil, for: UIControl.State.normal)
-        button22.setBackgroundImage(nil, for: UIControl.State.normal)
-        button00.isEnabled = true
-        button01.isEnabled = true
-        button02.isEnabled = true
-        button10.isEnabled = true
-        button11.isEnabled = true
-        button12.isEnabled = true
-        button20.isEnabled = true
-        button21.isEnabled = true
-        button22.isEnabled = true
+        for i in 0...2 {
+            for j in 0...2 {
+            buttonArr[i][j].setBackgroundImage(nil, for: UIControl.State.normal)
+            buttonArr[i][j].isEnabled = true
+                statusLabel.text = ""
+                count = 0
+                player = 1
+                flag = 9
+            }
+        }
     }
-    
     @IBAction func buttonPressed(_ sender: UIButton){
         if(player == 1 ){
             sender.setBackgroundImage(UIImage(named: "TTTO"), for: UIControl.State.normal)
             player = 2
+            sender.tag = 0
             sender.isEnabled = false
             count += 1
         }
         else {
             sender.setBackgroundImage(UIImage(named: "TTTX"), for: UIControl.State.normal)
             player = 1
+            sender.tag = 1
             sender.isEnabled = false
             count += 1
         }
-    print (count)
+        //check winner
+        if count == 9 || count == 5{
+            getWinner()
+        }
+    }
+    func getWinner() {
+        //for vertical columns...
+        for i in 0...2 {
+            if(buttonArr[0][i].tag == buttonArr[1][i].tag && buttonArr[0][i].tag == buttonArr[2][i].tag){
+                flag = buttonArr[0][i].tag
+            }
+        }
+        //for horizontal rows...
+        for i in 0...2 {
+            if(buttonArr[i][0].tag == buttonArr[i][1].tag && buttonArr[i][0].tag == buttonArr[i][2].tag) {
+                flag = buttonArr[i][0].tag
+            }
+        }
+        // for diagonals
+        if (buttonArr[0][0].tag == buttonArr[1][1].tag && buttonArr[1][1].tag == buttonArr[2][2].tag) {
+            flag = buttonArr[0][0].tag
+        }
+        if (buttonArr[0][2].tag == buttonArr[1][1].tag && buttonArr[1][1].tag == buttonArr[2][0].tag) {
+            flag = buttonArr[0][2].tag
+        }
+        if(flag == 0) {
+            statusLabel.text = "Player 1 won..."
+        }
+        if(flag == 1){
+            statusLabel.text = "Player 2 won..."
+        }
+        if(count == 9)
+        {
+            if(flag == 9){
+                 statusLabel.text = "Draw..."
+            }
+        }
     }
 }
