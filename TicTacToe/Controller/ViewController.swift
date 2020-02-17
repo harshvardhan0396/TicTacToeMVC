@@ -74,14 +74,14 @@ class ViewController: UIViewController {
     func getWinner() {
         //for vertical columns...
         for i in 0...2 {
-            if(buttonArr[0][i].tag == buttonArr[1][i].tag && buttonArr[0][i].tag == buttonArr[2][i].tag){
+            if(buttonArr[0][i].tag == buttonArr[1][i].tag && buttonArr[0][i].tag == buttonArr[2][i].tag && buttonArr[0][i].tag != 9){
                 flag = buttonArr[0][i].tag
                 print("flag for vertical:\(flag)")
             }
         }
         //for horizontal rows...
         for i in 0...2 {
-            if(buttonArr[i][0].tag == buttonArr[i][1].tag && buttonArr[i][0].tag == buttonArr[i][2].tag) {
+            if(buttonArr[i][0].tag == buttonArr[i][1].tag && buttonArr[i][0].tag == buttonArr[i][2].tag && buttonArr[i][0].tag != 9) {
                 flag = buttonArr[i][0].tag
                 print("flag for horizontal:\(flag)")
             }
