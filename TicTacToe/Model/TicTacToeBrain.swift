@@ -9,7 +9,7 @@
 import UIKit
 
 struct TicTacToeBrain{
-    
+    var boardArray = [UIButton]()
     var player = 1
     var image = ""
     var buttonKey = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
@@ -17,6 +17,7 @@ struct TicTacToeBrain{
     var i = 0
     var count = 0
     var message = ""
+    
     mutating func resetState(){
         player = 1
         image = ""
@@ -27,7 +28,7 @@ struct TicTacToeBrain{
         message = ""
     }
     mutating func getButtonClicked(buttonTag: Int){
-
+        
         if(player == 1 ){
             player = 2
             image = "TTTO"
@@ -42,6 +43,7 @@ struct TicTacToeBrain{
         buttonKey[buttonTag] = value
         //print(buttonKey)
         count += 1
+        print(count)
         gameLogic(buttonKeyArray: buttonKey)
     }
     
@@ -52,13 +54,13 @@ struct TicTacToeBrain{
     mutating func gameLogic(buttonKeyArray : [Int]){
         for i in stride(from: 0, to: 7, by: 3){
             //for horizontal
-            if(buttonKeyArray[i] == buttonKeyArray[i+1] && buttonKeyArray[i] == buttonKeyArray[i+2]){
+            if(buttonKeyArray[i] != -1 && buttonKeyArray[i] == buttonKeyArray[i+1] && buttonKeyArray[i] == buttonKeyArray[i+2]){
                 flag = buttonKeyArray[i]
                 break
             }
         }
         for i in 0...2{
-            if(buttonKeyArray[i] == buttonKeyArray[i+3] && buttonKeyArray[i] == buttonKeyArray[i+6]){
+            if(buttonKeyArray[i] != -1 && buttonKeyArray[i] == buttonKeyArray[i+3] && buttonKeyArray[i] == buttonKeyArray[i+6]){
                 flag = buttonKeyArray[i]
                 break
             }
@@ -73,18 +75,19 @@ struct TicTacToeBrain{
         message = printMessage(showMessage: flag)
     }
     mutating func printMessage(showMessage : Int) -> String{
-        
         if(showMessage == 0){
-           message = "1"
+           message = "Player 1 Won"
         }
         if(showMessage == 1){
-            message = "2"
+            message = "player 2 Won"
         }
-        if(count == 9 && flag == 2){
-            message = "D"
+        if(count == 9 && flag != 2){
+            message = "Draw"
+            print("Draw")
         }
         return message
     }
+    
 }
 
 
