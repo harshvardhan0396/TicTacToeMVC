@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     }
     
     
+    
     var image = ""
     override func viewDidAppear(_ animated: Bool) {
         let alert = UIAlertController(title: "Select 0 or X", message: nil, preferredStyle: UIAlertController.Style.alert)
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
     
     
     @IBAction func restartGame(_ sender: AnyObject) {

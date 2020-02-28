@@ -9,7 +9,7 @@
 import UIKit
 
 struct TicTacToeBrain{
-    var count = 0
+    var moveCount = 0
     var value = 0
     var player = 1
     var setImage = ""
@@ -18,7 +18,7 @@ struct TicTacToeBrain{
     var flag = 2
     var winningCountPlayerOne = 0
     var winningCountPlayerTwo = 0
-    var boardKey = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+    var gameBoardState = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
     
     mutating func endGame(){
         winningCountPlayerOne = 0
@@ -28,9 +28,9 @@ struct TicTacToeBrain{
     mutating func restartState(){
         player = 1
         setImage = ""
-        boardKey = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
+        gameBoardState = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
         value = 0
-        count = 0
+        moveCount = 0
         message = ""
     }
     
@@ -56,9 +56,9 @@ struct TicTacToeBrain{
             value = 1
         }
         
-        boardKey[buttonTag] = value
-        count += 1
-        gameLogic(boardKeyArray: boardKey)
+        gameBoardState[buttonTag] = value
+        moveCount += 1
+        gameLogic(gameBoardStateArray: gameBoardState)
     }
     
     func imageUpdate() -> String{
@@ -66,26 +66,26 @@ struct TicTacToeBrain{
     }
     
     
-    mutating func gameLogic(boardKeyArray : [Int]){
+    mutating func gameLogic(gameBoardStateArray : [Int]){
         for indexValue in stride(from: 0, to: 7, by: 3){
             //for horizontal
-            if(boardKeyArray[indexValue] != -1 && boardKeyArray[indexValue] == boardKeyArray[indexValue+1] && boardKeyArray[indexValue] == boardKeyArray[indexValue+2]){
-                flag = boardKeyArray[indexValue]
+            if(gameBoardStateArray[indexValue] != -1 && gameBoardStateArray[indexValue] == gameBoardStateArray[indexValue+1] && gameBoardStateArray[indexValue] == gameBoardStateArray[indexValue+2]){
+                flag = gameBoardStateArray[indexValue]
                 break
             }
         }
         for indexValue in 0...2{
-            if(boardKeyArray[indexValue] != -1 && boardKeyArray[indexValue] == boardKeyArray[indexValue+3] && boardKeyArray[indexValue] == boardKeyArray[indexValue+6]){
-                flag = boardKeyArray[indexValue]
+            if(gameBoardStateArray[indexValue] != -1 && gameBoardStateArray[indexValue] == gameBoardStateArray[indexValue+3] && gameBoardStateArray[indexValue] == gameBoardStateArray[indexValue+6]){
+                flag = gameBoardStateArray[indexValue]
                 break
             }
         }
         
-        if(boardKeyArray[0] == boardKeyArray[4] && boardKeyArray[0] == boardKeyArray[8]){
-            flag = boardKeyArray[0]
+        if(gameBoardStateArray[0] == gameBoardStateArray[4] && gameBoardStateArray[0] == gameBoardStateArray[8]){
+            flag = gameBoardStateArray[0]
         }
-        if(boardKeyArray[2] == boardKeyArray[4] && boardKeyArray[2] == boardKeyArray[6]){
-            flag = boardKeyArray[2]
+        if(gameBoardStateArray[2] == gameBoardStateArray[4] && gameBoardStateArray[2] == gameBoardStateArray[6]){
+            flag = gameBoardStateArray[2]
         }
         message = showResult(checkWinner: flag)
     }
@@ -101,7 +101,7 @@ struct TicTacToeBrain{
              winningCountPlayerTwo += 1
             print("player 2 won times :",winningCountPlayerTwo)
         }
-        if(count == 9 && flag != 1 && flag != 0){
+        if(moveCount == 9 && flag != 1 && flag != 0){
             message = "Draw"
         }
         return message
