@@ -40,7 +40,9 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func EndGame(_ sender: UIButton) {
+    @IBAction func EndGame(_ sender: AnyObject) {
+        self.loadView()
+        structObj.restartState()
         viewDidAppear(true)
         structObj.endGame()
     }

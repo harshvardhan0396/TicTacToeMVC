@@ -4,9 +4,14 @@
 //
 //  Created by Harshvardhan on 20/02/20.
 //  Copyright © 2020 Harshvardhan. All rights reserved.
-//
+// build 2 march
 
 import UIKit
+
+struct PlayerDetails{
+    var playerName = ""
+}
+
 
 struct TicTacToeBrain{
     var moveCount = 0
@@ -88,6 +93,7 @@ struct TicTacToeBrain{
             flag = gameBoardStateArray[2]
         }
         message = showResult(checkWinner: flag)
+        
     }
     
     mutating func showResult(checkWinner : Int) -> String{
@@ -108,6 +114,3 @@ struct TicTacToeBrain{
     }
     
 }
-
-
-
