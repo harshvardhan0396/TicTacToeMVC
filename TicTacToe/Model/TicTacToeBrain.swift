@@ -10,7 +10,9 @@ import UIKit
 
 struct PlayerDetails{
     var playerName = ""
+    var room = ""
 }
+
 
 
 struct TicTacToeBrain{
