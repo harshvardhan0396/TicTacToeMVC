@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1nj-n3-r6F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BLg-sI-i9o">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -151,29 +151,64 @@
             </objects>
             <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
         </scene>
-        <!--Player-->
-        <scene sceneID="dNJ-ou-KHp">
+        <!--Player Mode-->
+        <scene sceneID="305-00-XOE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Mc-tb-tjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="1nj-n3-r6F" customClass="Player" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1Jd-3Q-ang" customClass="Player">
+                <viewController id="BLg-sI-i9o" customClass="PlayerMode" customModule="TicTacToe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fz0-Zc-7O0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WelCome to TicTacToe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeI-h6-vbe">
-                                <rect key="frame" x="66" y="105" width="283" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e5o-AF-6qK">
+                                <rect key="frame" x="32" y="358" width="350" height="181"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SelectMode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0K-RW-ggd">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="55"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJO-d8-3y5">
+                                        <rect key="frame" x="0.0" y="65" width="350" height="55"/>
+                                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Offline"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="Iwc-Ru-ze3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejH-3u-1tT">
+                                        <rect key="frame" x="0.0" y="130" width="350" height="51"/>
+                                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <state key="normal" title="Online"/>
+                                        <connections>
+                                            <action selector="OnlineButton:" destination="h5r-rn-6pe" eventType="touchUpInside" id="b0v-St-bRX"/>
+                                            <action selector="onlineButton:" destination="BLg-sI-i9o" eventType="touchUpInside" id="Hk9-7n-NYR"/>
+                                            <action selector="onlineButton:" destination="h5r-rn-6pe" eventType="touchUpInside" id="OEB-s6-fxs"/>
+                                            <action selector="onlineButton:forEvent:" destination="h5r-rn-6pe" eventType="touchUpInside" id="93y-pg-a56"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="hYS-Ue-bfk"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.60237451740000003" blue="0.0096646540530000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="keC-is-4UK"/>
+                        <constraints>
+                            <constraint firstItem="e5o-AF-6qK" firstAttribute="top" secondItem="y01-If-jPT" secondAttribute="top" constant="314" id="2Kf-dO-53L"/>
+                            <constraint firstItem="y01-If-jPT" firstAttribute="trailing" secondItem="e5o-AF-6qK" secondAttribute="trailing" constant="32" id="5q6-Yj-O6Q"/>
+                            <constraint firstItem="y01-If-jPT" firstAttribute="bottom" secondItem="e5o-AF-6qK" secondAttribute="bottom" constant="323" id="kGd-sb-Vfk"/>
+                            <constraint firstItem="e5o-AF-6qK" firstAttribute="leading" secondItem="y01-If-jPT" secondAttribute="leading" constant="32" id="wOV-cm-9f4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y01-If-jPT"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfJ-cl-kBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="h5r-rn-6pe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1026.0869565217392" y="18.75"/>
+            <point key="canvasLocation" x="-835" y="19"/>
         </scene>
     </scenes>
 </document>

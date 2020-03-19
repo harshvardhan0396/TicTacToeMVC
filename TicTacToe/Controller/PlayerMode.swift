@@ -1,25 +1,20 @@
 //
-//  Player.swift
+//  PlayerMode.swift
 //  TicTacToe
 //
-//  Created by Harshvardhan on 04/03/20.
+//  Created by Harshvardhan on 19/03/20.
 //  Copyright © 2020 Harshvardhan. All rights reserved.
 //
 
 import UIKit
 
-class Player: UIViewController {
-    var playerDetails = PlayerDetails()
+class PlayerMode: UIViewController {
     override func viewDidLoad() {
+        var playerDetails = PlayerDetails()
         super.viewDidLoad()
+    }
+    
 
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    @IBAction func offlineButton(_ sender: UIButton) {
-    
-    }
     
     @IBAction func onlineButton(_ sender: UIButton) {
         let alertController = UIAlertController(title: "TicTacToe", message: "", preferredStyle: .alert)
@@ -36,8 +31,8 @@ class Player: UIViewController {
         alertController.addAction(UIAlertAction(title: "Join Room", style: UIAlertAction.Style.default, handler: { _ in
             let tttVC = ViewController()
             self.present(tttVC, animated:true, completion:nil)
-            self.playerDetails.playerName = playerName.text!
-            self.playerDetails.room = playerRoomName.text!
+            //self.playerDetails.playerName = playerName.text!
+            //self.playerDetails.room = playerRoomName.text!
             //PlayerDetails.init(playerName: playerName, room: playerRoomName)
             
         }))
@@ -47,8 +42,7 @@ class Player: UIViewController {
         }))
         
         self.present(alertController, animated: true, completion: nil)
-        
+    }
     
 
-    }
 }

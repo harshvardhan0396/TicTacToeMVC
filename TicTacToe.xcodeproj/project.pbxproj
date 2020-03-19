@@ -15,6 +15,7 @@
 		3A5D5C5723F52B1D00412B59 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D5C5623F52B1D00412B59 /* TicTacToeTests.swift */; };
 		3A5D5C6223F52B1D00412B59 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D5C6123F52B1D00412B59 /* TicTacToeUITests.swift */; };
 		3A777109240CD4A300E671CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A777108240CD4A300E671CA /* GoogleService-Info.plist */; };
+		3A7E74A624233C5500DD4ACD /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E74A524233C5500DD4ACD /* PlayerMode.swift */; };
 		3A83C69523FE4E5100626FB9 /* TicTacToeBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C69423FE4E5100626FB9 /* TicTacToeBrain.swift */; };
 		3A83C69723FE4EE300626FB9 /* OldLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83C69623FE4EE300626FB9 /* OldLogic.swift */; };
 		3A9A5680240F71AD00B1B661 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A567F240F71AD00B1B661 /* Player.swift */; };
@@ -54,6 +55,7 @@
 		3A5D5C6123F52B1D00412B59 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		3A5D5C6323F52B1D00412B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A777108240CD4A300E671CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3A7E74A524233C5500DD4ACD /* PlayerMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
 		3A83C69423FE4E5100626FB9 /* TicTacToeBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeBrain.swift; sourceTree = "<group>"; };
 		3A83C69623FE4EE300626FB9 /* OldLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldLogic.swift; sourceTree = "<group>"; };
 		3A9A567F240F71AD00B1B661 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				3A5D5C4323F52B1B00412B59 /* ViewController.swift */,
 				3A9A567F240F71AD00B1B661 /* Player.swift */,
+				3A7E74A524233C5500DD4ACD /* PlayerMode.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				3A83C69723FE4EE300626FB9 /* OldLogic.swift in Sources */,
 				3A9A5680240F71AD00B1B661 /* Player.swift in Sources */,
 				3A83C69523FE4E5100626FB9 /* TicTacToeBrain.swift in Sources */,
+				3A7E74A624233C5500DD4ACD /* PlayerMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
